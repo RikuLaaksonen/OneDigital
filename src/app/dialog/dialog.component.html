@@ -1,0 +1,10 @@
+<div class="dialog" *ngIf="visible" [attr.aria-label]="ariaLabel" [attr.aria-labelledby]="ariaLabelledby" [attr.id]="id">
+  <div class="dialog-header">
+    <span>{{ title }}</span>
+    <button *ngIf="closable" class="close-button" tabindex="0" role="button" (click)="onClose()" aria-label="Close Dialog">X</button>
+  </div>
+  <div class="dialog-content">
+    <ng-content></ng-content>
+  </div>
+</div>
+

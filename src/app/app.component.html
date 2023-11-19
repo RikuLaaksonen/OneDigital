@@ -1,0 +1,14 @@
+<button (click)="dialog1.openDialog('1')" class="btn">Open Dialog 1</button>
+<button (click)="dialog2.openDialog('2')" class="btn">Open Dialog 2</button>
+
+<app-dialog #dialog1 [id]="'1'" [title]="'Text dialog'" (closed)="dialog1.onClose()">
+  <p>Hello Team one digital</p>
+</app-dialog>
+
+<app-dialog #dialog2 [id]="'2'" [title]="'Form Dialog'" (closed)="dialog2.onClose()">
+  <form (submit)="submitForm(dialog2)">
+    <label for="inputField">Enter something:</label>
+    <input type="text" id="inputField" name="inputField" [(ngModel)]="formData.inputValue" required>
+    <button type="submit">Submit</button>
+  </form>
+</app-dialog>
